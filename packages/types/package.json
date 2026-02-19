@@ -1,0 +1,14 @@
+{
+  "name": "@ullatchi/types",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "dependencies": {
+    "zod": "latest"
+  },
+  "devDependencies": {
+    "typescript": "~5.9.3"
+  }
+}

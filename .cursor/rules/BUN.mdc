@@ -1,0 +1,5 @@
+---
+alwaysApply: true
+---
+
+ALWAYS USE Bun for running scripts or installing something. Don't use NPM or PNPM or any of other garbage.
