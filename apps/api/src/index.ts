@@ -11,6 +11,7 @@ const corsOrigins = process.env.CORS_ORIGINS
 
 const app = new Elysia()
   .use(cors({ origin: corsOrigins }))
+  .get("/", () => ({ ok: true, message: "Ullatchi API is running" }))
   .use(mapsRoutes)
   .use(placesRoutes)
   .use(reportRoutes)
