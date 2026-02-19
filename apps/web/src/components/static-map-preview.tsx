@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { MapPin } from "lucide-react";
+import { apiUrl } from "@/lib/api";
 
 interface StaticMapPreviewProps {
   lat: number;
@@ -17,7 +18,7 @@ export function StaticMapPreview({
   const [isLoading, setIsLoading] = useState(true);
   const [hasError, setHasError] = useState(false);
 
-  const mapUrl = `/api/maps/static?lat=${lat}&lng=${lng}&zoom=15&size=400x200`;
+  const mapUrl = apiUrl(`/api/maps/static?lat=${lat}&lng=${lng}&zoom=15&size=400x200`);
 
   return (
     <div

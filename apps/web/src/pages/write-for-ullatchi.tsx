@@ -18,6 +18,7 @@ import {
   type PortableTextBlock,
 } from "@/components/article-editor";
 import { ImageCropper } from "@/components/image-cropper";
+import { apiUrl } from "@/lib/api";
 import type { ArticleSubmission } from "@ullatchi/types";
 
 type WriteFormData = Omit<ArticleSubmission, "content">;
@@ -87,7 +88,7 @@ export function WriteForUllatchiPage() {
         formData.append("profileImage", profileImageBlob, "profile.png");
       }
 
-      const response = await fetch("/api/submit-article", {
+      const response = await fetch(apiUrl("/api/submit-article"), {
         method: "POST",
         body: formData,
       });

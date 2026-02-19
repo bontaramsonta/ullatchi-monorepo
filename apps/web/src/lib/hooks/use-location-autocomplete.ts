@@ -1,4 +1,5 @@
 import { useState, useCallback, useRef, useEffect } from "react";
+import { apiUrl } from "@/lib/api";
 import type { Prediction, LocationValue } from "@ullatchi/types";
 
 export type { Prediction, LocationValue };
@@ -50,7 +51,7 @@ export function useLocationAutocomplete(
       });
 
       const response = await fetch(
-        `/api/places/autocomplete?${params.toString()}`,
+        apiUrl(`/api/places/autocomplete?${params.toString()}`),
         {
           signal: abortControllerRef.current.signal,
         },
@@ -106,7 +107,7 @@ export function useLocationAutocomplete(
         });
 
         const response = await fetch(
-          `/api/places/details?${params.toString()}`,
+          apiUrl(`/api/places/details?${params.toString()}`),
         );
 
         if (!response.ok) {
@@ -158,7 +159,7 @@ export function useLocationAutocomplete(
         });
 
         const response = await fetch(
-          `/api/places/reverse-geocode?${params.toString()}`,
+          apiUrl(`/api/places/reverse-geocode?${params.toString()}`),
         );
 
         if (!response.ok) {

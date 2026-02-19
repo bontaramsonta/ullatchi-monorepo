@@ -21,6 +21,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { useReportCategories } from "@/lib/hooks/use-reports";
+import { apiUrl } from "@/lib/api";
 import type { ReportCategoryItem } from "@/lib/queries/sanity-reports";
 import { LocationAutocompleteInput } from "./location-autocomplete-input";
 import type { LocationValue } from "@ullatchi/types";
@@ -112,7 +113,7 @@ export function ReportDialog({
         formData.append("image", data.image[0]);
       }
 
-      const response = await fetch("/api/report", {
+      const response = await fetch(apiUrl("/api/report"), {
         method: "POST",
         body: formData,
       });

@@ -5,6 +5,7 @@ import {
   AdvancedMarker,
 } from "@vis.gl/react-google-maps";
 import { Loader2, MapPin } from "lucide-react";
+import { apiUrl } from "@/lib/api";
 import type { ReportWithCategory } from "@/lib/queries/sanity-reports";
 
 const CHENNAI_BOUNDS = {
@@ -38,7 +39,7 @@ export function IssuesMap({ reports }: IssuesMapProps) {
       setIsLoadingKey(true);
       setKeyError(null);
 
-      fetch("/api/maps/key")
+      fetch(apiUrl("/api/maps/key"))
         .then((res) => {
           if (!res.ok) throw new Error("Failed to load map");
           return res.json();

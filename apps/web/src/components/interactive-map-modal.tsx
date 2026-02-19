@@ -15,6 +15,7 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
+import { apiUrl } from "@/lib/api";
 import type { LocationValue } from "@ullatchi/types";
 
 // Chennai bounds and center
@@ -57,7 +58,7 @@ export function InteractiveMapModal({
       setIsLoadingKey(true);
       setKeyError(null);
 
-      fetch("/api/maps/key")
+      fetch(apiUrl("/api/maps/key"))
         .then((res) => {
           if (!res.ok) throw new Error("Failed to load map");
           return res.json();
@@ -92,7 +93,7 @@ export function InteractiveMapModal({
         lng: lng.toString(),
       });
       const response = await fetch(
-        `/api/places/reverse-geocode?${params.toString()}`,
+        apiUrl(`/api/places/reverse-geocode?${params.toString()}`),
       );
 
       if (!response.ok) {
