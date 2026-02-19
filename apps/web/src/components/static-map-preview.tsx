@@ -54,7 +54,7 @@ export function StaticMapPreview({
       {name && (
         <div className="px-3 py-2 bg-muted/50">
           <div className="flex items-center gap-2 text-sm">
-            <MapPin className="w-4 h-4 text-muted-foreground flex-shrink-0" />
+            <MapPin className="w-4 h-4 text-muted-foreground shrink-0" />
             <span className="truncate">{name}</span>
           </div>
           <div className="text-xs text-muted-foreground mt-1">
