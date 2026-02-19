@@ -2,7 +2,11 @@
   "$schema": "https://turborepo.dev/schema.v2.json",
   "tasks": {
     "build": {
-      "env": ["VITE_API_URL"],
+      "dependsOn": ["^build"],
+      "outputs": ["dist/**"]
+    },
+    "api#build": {
+      "env": ["GOOGLE_MAPS_FRONTEND_KEY", "SANITY_API_TOKEN"],
       "dependsOn": ["^build"],
       "outputs": ["dist/**"]
     },
