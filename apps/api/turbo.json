@@ -1,0 +1,10 @@
+{
+    "$schema": "https://turborepo.dev/schema.v2.json",
+    "tasks": {
+        "build": {
+            "env": ["VERCEL","GOOGLE_MAPS_FRONTEND_KEY", "SANITY_API_TOKEN"],
+            "dependsOn": ["^build"],
+            "outputs": ["dist/**"]
+        }
+    }
+}
