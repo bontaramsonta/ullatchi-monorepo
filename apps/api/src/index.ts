@@ -6,7 +6,7 @@ import { reportRoutes } from "./routes/report";
 import { articleRoutes } from "./routes/article";
 
 const corsOrigins = process.env.CORS_ORIGINS
-  ? process.env.CORS_ORIGINS.split(",").map((o) => o.trim())
+  ? process.env.CORS_ORIGINS.split(",").map((o: string) => o.trim())
   : ["*"];
 
 const app = new Hono();
