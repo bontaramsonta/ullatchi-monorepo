@@ -6,7 +6,7 @@
       "outputs": ["dist/**"]
     },
     "api#build": {
-      "env": ["GOOGLE_MAPS_FRONTEND_KEY", "SANITY_API_TOKEN"],
+      "env": ["VERCEL","GOOGLE_MAPS_FRONTEND_KEY", "SANITY_API_TOKEN"],
       "dependsOn": ["^build"],
       "outputs": ["dist/**"]
     },

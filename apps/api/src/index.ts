@@ -19,8 +19,3 @@ app.route("/", reportRoutes);
 app.route("/", articleRoutes);
 
 export default app;
-
-if (process.env.VERCEL !== "1") {
-  console.log("API server running at http://localhost:3001");
-  Bun.serve({ port: 3001, fetch: app.fetch });
-}
